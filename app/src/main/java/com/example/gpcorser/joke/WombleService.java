@@ -21,8 +21,9 @@ public class WombleService extends IntentService {
         mediaPlayer.start();
         mp = mediaPlayer;
     }
-
+    @Override
     public void onDestroy() {
+        // kill the music after 10
         synchronized (this) {
             try {
                 wait(10000);
@@ -31,5 +32,6 @@ public class WombleService extends IntentService {
             }
         }
         mp.stop();
+        mp.release();
     }
 }
