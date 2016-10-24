@@ -18,6 +18,9 @@
 
         <service
             android:name=".DelayedMessageService"
+            android:exported="false" />
+        <service
+            android:name=".WombleService"
             android:exported="false"></service>
     </application>
 
